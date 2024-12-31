@@ -32,5 +32,5 @@ jobs:
       run: dotnet test --no-build -c Release tests
     - name: Pack
       run: dotnet pack -c Release --include-symbols -o bin
-    - name: Push Package to NuGet.org
+    - name: Push Package to Local Feed
       run: dotnet nuget push bin\*.nupkg -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json -k ${{ secrets.GITHUB_TOKEN }}
